@@ -1,0 +1,27 @@
+name: 🚀 Deploy del sitio web
+on:
+    push:
+        branches: 
+            - main
+permissions:
+    contents: write
+jobs:
+    build-and-deploy:
+        concurrency: ci-${{ github.ref }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Obtener el código del repositorio
+              uses: actions/checkout@v4
+            
+            - name: Instalar bun
+              uses: oven-sh/setup-bun@v2
+              with:
+                bun-version: 1.2.18
+            
+            - name: Build del proyecto
+              run: bun run build
+            
+            - name: Deploy
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                folder: build
