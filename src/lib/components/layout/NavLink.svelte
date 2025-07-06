@@ -16,7 +16,7 @@ const isActive = $derived(page.url.pathname === href);
 <a 
   {href}
   aria-label="{label}" 
-  class="flex gap-2 p-2 text-gray-400 text-[1rem] items-center hover:text-foreground"
+  class="flex items-center gap-2 p-2 text-[1rem] text-gray-400 hover:text-foreground"
   class:active = {isActive}
 >
     {@render children()}
