@@ -16,7 +16,7 @@ const { title, description, href, children, ...restProps }: Props = $props();
 </script>
 
 <Card.Root {...restProps}>
-    <Card.Header class="text-left bg-secondary/60 py-5 rounded-sm">
+    <Card.Header class="rounded-sm bg-secondary/60 py-5 text-left">
         <Card.Title class="font-bold">{title}</Card.Title>
         <Card.Description>
             {description}
