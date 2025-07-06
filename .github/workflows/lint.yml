@@ -19,7 +19,7 @@ jobs:
       - name: Instalar Dependencias con bun
         run: bun install
 
-      - name: Formatear y lintear codigo con biome
+      - name: Formatear y lintear código con biome
         run: bun run lint
 
       - name: Hacer commit y push de los cambios
