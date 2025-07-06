@@ -18,6 +18,9 @@ jobs:
               with:
                 bun-version: 1.2.18
             
+            - name: Instalar Dependencias con bun
+              run: bun install
+            
             - name: Build del proyecto
               run: bun run build
             
