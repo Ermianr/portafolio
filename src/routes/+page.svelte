@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Inicio | Portafolio</title>
+</svelte:head>
+
 <script lang="ts">
 import ProjectCard from "$lib/components/layout/ProjectCard.svelte";
 import { Badge } from "$lib/components/ui/badge/index.js";
