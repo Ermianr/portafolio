@@ -20,7 +20,7 @@ jobs:
         run: bun install
 
       - name: Formatear y lintear codigo con biome
-        run: bunx biome check --write ./src/lib/components ./src/routers
+        run: bun run lint
 
       - name: Hacer commit y push de los cambios
         uses: stefanzweifel/git-auto-commit-action@v6
