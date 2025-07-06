@@ -4,7 +4,7 @@ import { Github, Hammer, House } from "@lucide/svelte";
 import NavLink from "./NavLink.svelte";
 </script>
 
-<header class="sticky top-0 z-50 flex w-full justify-center border-b px-8 bg-background/80 backdrop-blur-md">
+<header class="sticky top-0 z-50 flex w-full justify-center border-b bg-background/80 px-8 backdrop-blur-md">
     <nav class="flex h-14 w-full max-w-6xl items-center justify-between">
         <div class="flex gap-4">
             <NavLink href="/" text="Inicio" label="Ir al inicio">
