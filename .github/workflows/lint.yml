@@ -8,7 +8,7 @@ jobs:
       contents: write
     
     steps:
-      - name: Obtener el codigo del repositorio
+      - name: Obtener el código del repositorio
         uses: actions/checkout@v4
 
       - name: Instalar Bun
