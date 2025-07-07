@@ -1,9 +1,8 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
 
-    import { page } from "$app/state";
-
     import { base } from "$app/paths";
+    import { page } from "$app/state";
 
     interface Props {
         href: string;
