@@ -1,23 +1,24 @@
 <script lang="ts">
-import { page } from "$app/state";
-import type { Snippet } from "svelte";
+    import type { Snippet } from "svelte";
 
-interface Props {
-    href: string;
-    text: string;
-    label: string;
-    children: Snippet;
-}
+    import { page } from "$app/state";
 
-const { href, text, label, children }: Props = $props();
-const isActive = $derived(page.url.pathname === href);
+    interface Props {
+        href: string;
+        text: string;
+        label: string;
+        children: Snippet;
+    }
+
+    const { href, text, label, children }: Props = $props();
+    const isActive = $derived(page.url.pathname === href);
 </script>
 
-<a 
-  {href}
-  aria-label="{label}" 
-  class="flex items-center gap-2 p-2 text-[1rem] text-gray-400 hover:text-foreground"
-  class:active = {isActive}
+<a
+    {href}
+    aria-label={label}
+    class="flex items-center gap-2 p-2 text-[1rem] text-gray-400 hover:text-foreground"
+    class:active={isActive}
 >
     {@render children()}
     <span class="hidden md:block">{text}</span>
@@ -27,6 +28,6 @@ const isActive = $derived(page.url.pathname === href);
     .active {
         background-color: var(--color-secondary);
         border-radius: var(--radius-sm);
-        color: var(--color-foreground)
+        color: var(--color-foreground);
     }
 </style>

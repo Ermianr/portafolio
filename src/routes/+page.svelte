@@ -1,20 +1,25 @@
+<script lang="ts">
+    import { MoveRight } from "@lucide/svelte";
+
+    import ProjectCard from "$lib/components/layout/ProjectCard.svelte";
+    import { Badge } from "$lib/components/ui/badge/index.js";
+    import Button from "$lib/components/ui/button/button.svelte";
+</script>
+
 <svelte:head>
     <title>Inicio | Portafolio</title>
 </svelte:head>
 
-<script lang="ts">
-import ProjectCard from "$lib/components/layout/ProjectCard.svelte";
-import { Badge } from "$lib/components/ui/badge/index.js";
-import Button from "$lib/components/ui/button/button.svelte";
-import { MoveRight } from "@lucide/svelte";
-</script>
-
 <section class="mx-auto mt-9 max-w-4xl">
-    <h1 class="bg-gradient-to-l from-purple-600 via-pink-400 to-orange-500 bg-clip-text text-transparent">
+    <h1
+        class="bg-gradient-to-l from-purple-600 via-pink-400 to-orange-500 bg-clip-text text-transparent"
+    >
         Hola, ¡Soy Kevin!
     </h1>
     <p>
-        Soy un desarrollador de 21 años de Colombia, apasionado por la programación y siempre conocer las cosas a fondo, actualmente me encuentro trabajando en una librería de websockets para conectarme al gateway de discord y crear bots de manera fácil y amigable.
+        Soy un desarrollador de 21 años de Colombia, apasionado por la programación y siempre
+        conocer las cosas a fondo, actualmente me encuentro trabajando en una librería de websockets
+        para conectarme al gateway de discord y crear bots de manera fácil y amigable.
     </p>
 </section>
 
@@ -24,7 +29,7 @@ import { MoveRight } from "@lucide/svelte";
         <ProjectCard
             title="Tindalos"
             description="Una librería para diseñar bots de discord con una sintaxis sencilla y completamente asíncrona de manera nativa."
-            href=#
+            href="#"
             class="bg-custom-background-card mt-9 p-6"
         >
             <Badge variant="secondary">Python</Badge>
@@ -32,9 +37,11 @@ import { MoveRight } from "@lucide/svelte";
             <Badge variant="secondary">uvloop</Badge>
         </ProjectCard>
     </div>
-    <div class="mt-6 flex items-center justify-center gap-2 transition-all duration-150 ease-in-out hover:translate-x-4 hover:text-purple-700">
+    <div
+        class="mt-6 flex items-center justify-center gap-2 transition-all duration-150 ease-in-out hover:translate-x-4 hover:text-purple-700"
+    >
         <a href="#">Mas proyectos</a>
-        <MoveRight class="cursor-pointer"/>        
+        <MoveRight class="cursor-pointer" />
     </div>
 </section>
 
