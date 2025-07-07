@@ -26,7 +26,6 @@ jobs:
             ${{ runner.os }}-bun-
 
       - name: Instalar Dependencias con bun
-        if: steps.cache-bun.outputs.cache-hit != 'true'
         run: bun install
 
       - name: Formatear y lintear código con biome
