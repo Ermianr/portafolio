@@ -3,6 +3,8 @@
 
     import { page } from "$app/state";
 
+    import { base } from "$app/paths";
+
     interface Props {
         href: string;
         text: string;
@@ -10,7 +12,8 @@
         children: Snippet;
     }
 
-    const { href, text, label, children }: Props = $props();
+    let { href, text, label, children }: Props = $props();
+    href = `${base}${href}`;
 </script>
 
 <a
