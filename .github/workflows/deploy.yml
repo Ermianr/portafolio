@@ -17,8 +17,18 @@ jobs:
               uses: oven-sh/setup-bun@v2
               with:
                 bun-version: 1.2.18
+
+            - name: Cache bun dependencies
+              id: cache-bun
+              uses: actions/cache@v4
+              with:
+                path: ~/.bun/install/cache
+                key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+                restore-keys: |
+                  ${{ runner.os }}-bun-
             
             - name: Instalar Dependencias con bun
+              if: steps.cache-bun.outputs.cache-hit != 'true'
               run: bun install
             
             - name: Build del proyecto
