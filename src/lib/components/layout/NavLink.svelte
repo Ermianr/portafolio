@@ -11,14 +11,13 @@
     }
 
     const { href, text, label, children }: Props = $props();
-    const isActive = $derived(page.url.pathname === href);
 </script>
 
 <a
     {href}
     aria-label={label}
     class="flex items-center gap-2 p-2 text-[1rem] text-gray-400 hover:text-foreground"
-    class:active={isActive}
+    class:active={page.url.pathname === href}
 >
     {@render children()}
     <span class="hidden md:block">{text}</span>
