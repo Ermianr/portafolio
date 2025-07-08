@@ -1,0 +1,22 @@
+---
+import NavLink from "./NavLink.astro";
+import House from "@lucide/astro/icons/house";
+import Hammer from "@lucide/astro/icons/hammer";
+---
+
+<header
+    class="fixed top-0 z-50 flex h-14 w-full items-center justify-center border-b bg-background/80 px-4 backdrop-blur-md"
+>
+    <nav class="w-full max-w-5xl">
+        <ul class="flex gap-4">
+            <NavLink href="/" transition:name="move" transition:animate="slide">
+                <House />
+                Inicio
+            </NavLink>
+            <NavLink href="/proyectos">
+                <Hammer />
+                Proyectos
+            </NavLink>
+        </ul>
+    </nav>
+</header>
