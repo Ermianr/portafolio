@@ -1,0 +1,33 @@
+name: 🚀 Deploy del sitio web
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el código del repositorio
+        uses: actions/checkout@v4
+      - name: Instalar y build
+        uses: withastro/action@v4
+        with:
+          srr: ./src
+          package-manager: bum@1.2.18
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: gitub-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
