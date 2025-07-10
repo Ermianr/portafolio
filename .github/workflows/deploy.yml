@@ -18,14 +18,13 @@ jobs:
       - name: Instalar y build
         uses: withastro/action@v4
         with:
-          srr: ./src
-          package-manager: bum@1.2.18
+          package-manager: bun@1.2.18
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: gitub-pages
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy en GitHub Pages
