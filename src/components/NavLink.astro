@@ -6,8 +6,17 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<li class="p-2 rounded-sm" class:list={[{ "bg-secondary": href === urlPath }]}>
-    <a {href} class="flex gap-2">
+<li
+    class="p-2 rounded-sm"
+    class:list={[
+        { "bg-secondary": href === urlPath },
+        {
+            "text-muted-foreground transition-colors hover:text-primary":
+                href !== urlPath,
+        },
+    ]}
+>
+    <a {href} class="flex items-center gap-2">
         <slot />
     </a>
 </li>
