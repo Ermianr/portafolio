@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "@/components/Section.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import Badge from "@/components/Badge.astro";
+import SpecialBadge from "@/components/SpecialBadge.astro";
+import ArrowRight from "@lucide/astro/icons/arrow-right";
+import { HighlightText } from "@/components/animate-ui/text/highlight";
+---
+
+<Layout>
+    <Section class="mt-28">
+        <h1 class="select-none">
+            Hola, <HighlightText
+                text="¡Soy Kevin!"
+                transition={{ duration: 0.5 }}
+                client:load
+            />
+        </h1>
+        <p class="mt-8">
+            Soy un desarrollador de 21 años de Colombia, apasionado por la
+            programación y siempre conocer las cosas a fondo, actualmente me
+            encuentro trabajando en una librería de websockets para conectarme
+            al gateway de discord y crear bots de manera fácil y amigable.
+        </p>
+    </Section>
+    <Section>
+        <h2>Mis proyectos</h2>
+        <ProjectCard
+            title="Tindalos"
+            description="Una librería para diseñar bots de discord con una sintaxis sencilla y completamente asíncrona de manera nativa."
+            href="#"
+        >
+            <Badge>Python</Badge>
+            <Badge>aiohttp</Badge>
+            <Badge>uvloop</Badge>
+        </ProjectCard>
+        <div
+            class="flex items-center justify-center transition-all hover:translate-x-4 hover:text-violet-400"
+        >
+            <a href="#" class="flex">
+                Más proyectos
+                <ArrowRight />
+            </a>
+        </div>
+    </Section>
+    <Section>
+        <h2>Tecnologías que utilizo</h2>
+        <h3 class="my-4">Herramientas</h3>
+        <div class="flex gap-2 flex-wrap">
+            <SpecialBadge>Git</SpecialBadge>
+            <SpecialBadge>Github</SpecialBadge>
+            <SpecialBadge>Vite</SpecialBadge>
+            <SpecialBadge>Bun</SpecialBadge>
+            <SpecialBadge>Node.js</SpecialBadge>
+        </div>
+        <h3 class="my-4">Tecnologías</h3>
+        <SpecialBadge>Github Actions</SpecialBadge>
+        <h3 class="my-4">Frontend Frameworks</h3>
+        <div class="flex gap-2 flex-wrap">
+            <SpecialBadge>Astro</SpecialBadge>
+            <SpecialBadge>React</SpecialBadge>
+            <SpecialBadge>Reflex</SpecialBadge>
+        </div>
+        <h3 class="my-4">Backend Frameworks</h3>
+        <div class="flex gap-2 flex-wrap">
+            <SpecialBadge>FastAPI</SpecialBadge>
+            <SpecialBadge>Reflex</SpecialBadge>
+        </div>
+        <h3 class="my-4">Librerías</h3>
+        <div class="flex gap-2 flex-wrap">
+            <SpecialBadge>TailwindCSS</SpecialBadge>
+            <SpecialBadge>uvloop</SpecialBadge>
+            <SpecialBadge>aiohttp</SpecialBadge>
+            <SpecialBadge>Pydantic</SpecialBadge>
+        </div>
+        <h3 class="my-4">Bases de datos</h3>
+        <div class="flex gap-2 flex-wrap">
+            <SpecialBadge>MongoDB</SpecialBadge>
+            <SpecialBadge>MySQL</SpecialBadge>
+        </div>
+    </Section>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import ButtonIcon from "./ButtonIcon.astro";
+import Link from "@lucide/astro/icons/link";
+interface Props {
+    title: string;
+    description: string;
+    href: string;
+}
+const { title, description, href } = Astro.props;
+---
+
+<article class="my-4 rounded-md border p-6">
+    <header
+        class="flex items-center justify-between rounded-md bg-secondary/60 p-4"
+    >
+        <div>
+            <h3>{title}</h3>
+            <p class="text-sm">{description}</p>
+        </div>
+        <div>
+            <ButtonIcon {href}>
+                <Link size={16} />
+            </ButtonIcon>
+        </div>
+    </header>
+    <footer class="mt-6 flex gap-2">
+        <slot />
+    </footer>
+</article>

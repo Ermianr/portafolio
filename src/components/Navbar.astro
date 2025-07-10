@@ -1,0 +1,26 @@
+---
+import NavLink from "./NavLink.astro";
+import House from "@lucide/astro/icons/house";
+import Hammer from "@lucide/astro/icons/hammer";
+import Github from "./Icons/Github.astro";
+---
+
+<header
+    class="fixed top-0 z-50 flex h-14 w-full items-center justify-center border-b bg-background/80 backdrop-blur-3xl px-4"
+>
+    <nav class="w-5xl flex items-center justify-between">
+        <ul class="flex gap-4">
+            <NavLink href="/">
+                <House size={18} />
+                <span class="hidden md:inline">Inicio</span>
+            </NavLink>
+            <NavLink href="/projects">
+                <Hammer size={18} />
+                <span class="hidden md:inline">Proyectos</span>
+            </NavLink>
+        </ul>
+        <a href="" class="p-2 rounded-sm transition-all hover:bg-secondary">
+            <Github />
+        </a>
+    </nav>
+</header>
