@@ -20,7 +20,7 @@
     "react-dom": "19.1.0",
     "tailwind-merge": "3.3.1",
     "tailwindcss": "4.1.11",
-    "typescript": "^5.8.3"
+    "typescript": "5.8.3"
   },
   "devDependencies": {
     "@types/bun": "1.2.18",
@@ -28,7 +28,7 @@
     "eslint": "9.30.1",
     "eslint-plugin-astro": "1.3.1",
     "tw-animate-css": "1.3.5",
-    "wrangler": "^4.24.3"
+    "wrangler": "4.24.3"
   },
   "scripts": {
     "dev": "astro dev",
