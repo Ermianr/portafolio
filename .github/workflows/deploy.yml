@@ -10,10 +10,12 @@ jobs:
     steps:
       - name: Obtener el código del repositorio
         uses: actions/checkout@v4
-      - name: Instalar y build
-        uses: withastro/action@v4
+      - name: Instalar
+        uses: oven-sh/setup-bun@v2
         with:
-          package-manager: bun@1.2.18
+          bun-version: 1.2.18
+      - name: build
+        uses: bun astro build
 
   deploy:
     runs-on: ubuntu-latest
