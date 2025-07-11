@@ -10,17 +10,23 @@ import Github from "./Icons/Github.astro";
 >
     <nav class="w-5xl flex items-center justify-between">
         <ul class="flex gap-4">
-            <NavLink href="/">
-                <House size={18} />
+            <NavLink href="/" label="Ir al inicio">
+                <House size={18} aria-hidden="true" />
                 <span class="hidden md:inline">Inicio</span>
             </NavLink>
-            <NavLink href="/projects">
-                <Hammer size={18} />
+            <NavLink href="/projects" label="Ir a proyectos">
+                <Hammer size={18} aria-hidden="true" />
                 <span class="hidden md:inline">Proyectos</span>
             </NavLink>
         </ul>
-        <a href="" class="p-2 rounded-sm transition-all hover:bg-secondary">
-            <Github />
+        <a
+            href="https://github.com/Ermianr"
+            aria-label="Visitar mi perfil de Github (se abre en nueva ventana)"
+            class="p-2 rounded-sm transition-all hover:bg-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <Github aria-hidden="true" />
         </a>
     </nav>
 </header>
