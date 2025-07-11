@@ -20,6 +20,7 @@ jobs:
         run: bun run build
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     name: Deploy
     steps:
