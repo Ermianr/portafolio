@@ -15,7 +15,7 @@ jobs:
         with:
           bun-version: 1.2.18
       - name: build
-        uses: bun astro build
+        run: bun astro build
 
   deploy:
     runs-on: ubuntu-latest
