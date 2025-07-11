@@ -5,13 +5,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
 
-import cloudflare from "@astrojs/cloudflare";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [react()],
-  adapter: cloudflare(),
+  site: "https://portfolio-ermian.vercel.app/",
+  integrations: [react(), sitemap()],
 });

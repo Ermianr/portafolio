@@ -115,10 +115,12 @@
         @apply border-border outline-ring/50;
     }
     html {
-        overflow-y: hidden;
+        overflow-y: auto;
+        scroll-behavior: smooth;
     }
     .main-container {
         overflow-y: auto;
+        scroll-behavior: smooth;
         height: 100vh;
         scrollbar-color: var(--muted-foreground) var(--muted);
         scrollbar-width: thin;

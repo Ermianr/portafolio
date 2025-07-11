@@ -13,8 +13,8 @@ import { HighlightText } from "@/components/animate-ui/text/highlight";
         <h1 class="select-none">
             Hola, <HighlightText
                 text="¡Soy Kevin!"
-                transition={{ duration: 0.5 }}
-                client:load
+                transition={{ duration: 0.8 }}
+                client:only="react"
             />
         </h1>
         <p class="mt-8">
@@ -38,7 +38,7 @@ import { HighlightText } from "@/components/animate-ui/text/highlight";
         <div
             class="flex items-center justify-center transition-all hover:translate-x-4 hover:text-violet-400"
         >
-            <a href="#" class="flex">
+            <a href="/projects" class="flex">
                 Más proyectos
                 <ArrowRight />
             </a>

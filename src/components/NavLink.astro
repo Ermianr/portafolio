@@ -1,22 +1,43 @@
 ---
-const urlPath = Astro.url.pathname;
 interface Props {
     href: string;
+    label: string;
 }
-const { href } = Astro.props;
+const { href, label } = Astro.props;
 ---
 
-<li
-    class="p-2 rounded-sm"
-    class:list={[
-        { "bg-secondary": href === urlPath },
-        {
-            "text-muted-foreground transition-colors hover:text-primary":
-                href !== urlPath,
-        },
-    ]}
->
-    <a {href} class="flex items-center gap-2">
+<li class="p-2 rounded-sm nav-link" data-href={href}>
+    <a {href} class="flex items-center gap-2" aria-label={label}>
         <slot />
     </a>
 </li>
+
+<script>
+    function updateActiveLink() {
+        const liItems = document.querySelectorAll(".nav-link");
+        const currentPath = window.location.pathname;
+
+        liItems.forEach((li) => {
+            const href = li.getAttribute("data-href");
+            const isActive = href === currentPath;
+
+            if (isActive) {
+                li.classList.add("bg-secondary");
+                li.classList.remove(
+                    "text-muted-foreground",
+                    "transition-colors",
+                    "hover:text-primary",
+                );
+            } else {
+                li.classList.remove("bg-secondary");
+                li.classList.add(
+                    "text-muted-foreground",
+                    "transition-colors",
+                    "hover:text-primary",
+                );
+            }
+        });
+    }
+
+    document.addEventListener("astro:page-load", updateActiveLink);
+</script>
