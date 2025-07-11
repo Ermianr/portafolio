@@ -7,11 +7,9 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ermianr.github.io",
-  base: import.meta.env.MODE !== "development" ? "/portafolio" : "/",
-  output: 'static',
   vite: {
     plugins: [tailwindcss()],
   },
+
   integrations: [react()],
 });
