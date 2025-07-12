@@ -5,11 +5,12 @@ interface Props {
     title: string;
     description: string;
     href: string;
+    label: string;
 }
-const { title, description, href } = Astro.props;
+const { title, description, href, label } = Astro.props;
 ---
 
-<article class="my-4 rounded-md border p-6">
+<article class="relative my-4 rounded-md border bg-background p-6">
     <header
         class="flex items-center justify-between rounded-md bg-secondary/60 p-4"
     >
@@ -18,7 +19,7 @@ const { title, description, href } = Astro.props;
             <p class="text-sm">{description}</p>
         </div>
         <div>
-            <ButtonIcon {href} label="Ir a Github(Tindalos)">
+            <ButtonIcon {href} label={label}>
                 <Link size={16} />
             </ButtonIcon>
         </div>
@@ -27,3 +28,42 @@ const { title, description, href } = Astro.props;
         <slot />
     </footer>
 </article>
+
+<style>
+    @property --angle {
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+    }
+
+    article::after,
+    article::before {
+        content: "";
+        position: absolute;
+        height: calc(100% + 0.4rem);
+        width: calc(100% + 0.4rem);
+        background-image: conic-gradient(
+            from var(--angle),
+            transparent 70%,
+            var(--color-purple-500)
+        );
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;
+        border-radius: inherit;
+        animation: 15s spin linear infinite;
+    }
+    article::before {
+        filter: blur(1.5rem);
+        opacity: 0.5;
+    }
+    @keyframes spin {
+        from {
+            --angle: 0deg;
+        }
+        to {
+            --angle: 360deg;
+        }
+    }
+</style>
