@@ -1,0 +1,39 @@
+---
+interface Props {
+    highlightText: string;
+}
+const { highlightText } = Astro.props;
+---
+
+<span class="highlight relative mx-4 inline-block">
+    {highlightText}
+</span>
+
+<style>
+    span::before {
+        content: "";
+        position: absolute;
+        background-image: linear-gradient(
+            to right,
+            var(--color-purple-400),
+            var(--color-blue-500)
+        );
+        width: calc(100% + 2rem);
+        height: calc(100% + 2rem);
+        border-radius: var(--radius-sm);
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;
+        transform-origin: left;
+        animation: slide 0.8s ease-in-out forwards;
+    }
+    @keyframes slide {
+        from {
+            transform: scaleX(0);
+        }
+        to {
+            transform: scaleX(1);
+        }
+    }
+</style>
