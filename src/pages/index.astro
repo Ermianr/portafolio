@@ -5,17 +5,14 @@ import ProjectCard from "@/components/ProjectCard.astro";
 import Badge from "@/components/Badge.astro";
 import SpecialBadge from "@/components/SpecialBadge.astro";
 import ArrowRight from "@lucide/astro/icons/arrow-right";
-import { HighlightText } from "@/components/animate-ui/text/highlight";
+import HighlightText from "@/components/HighlightText.astro";
 ---
 
 <Layout pageTitle="Inicio | Portafolio">
     <Section class="mt-28">
         <h1 class="select-none">
-            Hola, <HighlightText
-                text="¡Soy Kevin!"
-                transition={{ duration: 0.8 }}
-                client:idle
-            />
+            Hola,
+            <HighlightText highlightText="¡Soy Kevin!" />
         </h1>
         <p class="mt-8">
             Soy un desarrollador de 21 años de Colombia, apasionado por la
@@ -30,6 +27,7 @@ import { HighlightText } from "@/components/animate-ui/text/highlight";
             title="Tindalos"
             description="Una librería para diseñar bots de discord con una sintaxis sencilla y completamente asíncrona de manera nativa."
             href="#"
+            label="Ir a Tindalos(Github)"
         >
             <Badge>Python</Badge>
             <Badge>aiohttp</Badge>

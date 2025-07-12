@@ -12,7 +12,7 @@ const { href, label } = Astro.props;
     </a>
 </li>
 
-<script>
+<script is:inline>
     function updateActiveLink() {
         const liItems = document.querySelectorAll(".nav-link");
         const currentPath = window.location.pathname;
@@ -24,14 +24,14 @@ const { href, label } = Astro.props;
             if (isActive) {
                 li.classList.add("bg-secondary");
                 li.classList.remove(
-                    "text-muted-foreground",
+                    "text-muted",
                     "transition-colors",
                     "hover:text-primary",
                 );
             } else {
                 li.classList.remove("bg-secondary");
                 li.classList.add(
-                    "text-muted-foreground",
+                    "text-muted",
                     "transition-colors",
                     "hover:text-primary",
                 );
