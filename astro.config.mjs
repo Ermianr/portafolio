@@ -12,6 +12,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  build: {
+    inlineStylesheets: "always",
+  },
   site: "https://portfolio-ermian.vercel.app/",
   integrations: [react(), sitemap()],
 });
