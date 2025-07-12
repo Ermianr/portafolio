@@ -35,7 +35,13 @@ const { title, description, href, label } = Astro.props;
         initial-value: 0deg;
         inherits: false;
     }
-
+    article {
+        background-image: radial-gradient(
+            var(--color-border) 3px,
+            transparent 1px
+        );
+        background-size: 50px 50px;
+    }
     article::after,
     article::before {
         content: "";
