@@ -61,11 +61,11 @@
         @apply border-border;
     }
     html {
-        overflow-y: auto;
+        overflow-y: hidden;
         scroll-behavior: smooth;
     }
     .main-container {
-        overflow-y: auto;
+        overflow-y: scroll;
         scroll-behavior: smooth;
         height: 100vh;
         scrollbar-color: var(--muted) var(--secondary);
