@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "VT323", monospace;
+  --color-background: oklch(0.657 0.132 318.158);
+}
